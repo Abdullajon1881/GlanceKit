@@ -1,0 +1,13 @@
+{
+  "name": "@glancekit/cli",
+  "version": "0.0.0",
+  "private": true,
+  "bin": {
+    "glancekit": "bin/glancekit.js"
+  },
+  "scripts": {
+    "build": "echo cli package pending",
+    "lint": "echo cli lint pending",
+    "typecheck": "echo cli typecheck pending"
+  }
+}

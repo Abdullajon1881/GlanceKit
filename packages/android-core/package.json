@@ -1,0 +1,34 @@
+{
+  "name": "@glancekit/android-core",
+  "version": "0.1.0-alpha.0",
+  "private": false,
+  "description": "Pure Android Glance/DataStore core module for GlanceKit alpha.",
+  "main": "index.js",
+  "files": [
+    "README.md",
+    "package.json",
+    "index.js",
+    "build.gradle.kts",
+    "consumer-rules.pro",
+    "src/main"
+  ],
+  "keywords": [
+    "glancekit",
+    "android",
+    "jetpack-glance",
+    "android-widget",
+    "datastore"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "echo android-core build is driven by Gradle consumers",
+    "lint": "echo android-core lint pending",
+    "typecheck": "echo android-core typecheck pending"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,56 @@
+# Dependencies
+node_modules/
+
+# Lockfiles (regenerated per environment)
+pnpm-lock.yaml
+
+# Gradle
+.gradle/
+**/build/
+**/.gradle/
+.gradle-*/
+
+# Android SDK / JDK
+.android-sdk/
+**/.android-sdk/
+.jdks/
+local.properties
+**/local.properties
+
+# APK / AAB / tarballs
+*.apk
+*.aab
+*.tgz
+
+# npm cache and temp
+.npm-cache*/
+.npm-pack-cache*/
+
+# Temp working directories
+.tmp-*/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+.classpath
+.project
+.settings/
+**/.classpath
+**/.project
+**/.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Expo
+.expo/
+**/.expo/
+
+# Metro
+.metro-health-check-*
+.metro-test/
+
+# Debug keystores
+debug.keystore

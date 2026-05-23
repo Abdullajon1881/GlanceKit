@@ -1,0 +1,36 @@
+{
+  "name": "@glancekit/expo-plugin",
+  "version": "0.1.0-alpha.0",
+  "private": false,
+  "description": "Expo config plugin for wiring the GlanceKit Android ProgressCardWidget.",
+  "main": "app.plugin.js",
+  "types": "src/index.d.ts",
+  "files": [
+    "app.plugin.js",
+    "package.json",
+    "README.md",
+    "src"
+  ],
+  "keywords": [
+    "glancekit",
+    "expo",
+    "config-plugin",
+    "android-widget",
+    "jetpack-glance"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "echo expo plugin pending",
+    "lint": "echo expo plugin lint pending",
+    "typecheck": "echo expo plugin typecheck pending"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "peerDependencies": {
+    "expo": ">=51"
+  }
+}

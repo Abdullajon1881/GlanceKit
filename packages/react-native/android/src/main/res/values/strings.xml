@@ -1,0 +1,4 @@
+<resources>
+    <string name="glancekit_progress_card_widget_description">A Glance-based progress card widget.</string>
+    <string name="glancekit_widget_loading">Loading widget...</string>
+</resources>

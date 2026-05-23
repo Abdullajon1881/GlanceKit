@@ -1,0 +1,50 @@
+{
+  "name": "@glancekit/react-native",
+  "version": "0.1.0-alpha.0",
+  "private": false,
+  "description": "TypeScript-first Android home-screen widget bridge for React Native and Expo, powered by Jetpack Glance.",
+  "main": "src/index.js",
+  "react-native": "src/index.js",
+  "types": "src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "react-native": "./src/index.js",
+      "default": "./src/index.js"
+    }
+  },
+  "files": [
+    "README.md",
+    "package.json",
+    "src",
+    "android/src/main",
+    "android/build.gradle.kts",
+    "android/consumer-rules.pro"
+  ],
+  "keywords": [
+    "glancekit",
+    "react-native",
+    "expo",
+    "android-widget",
+    "jetpack-glance"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@glancekit/android-core": "0.1.0-alpha.0"
+  },
+  "scripts": {
+    "build": "echo react-native package pending",
+    "lint": "echo react-native lint pending",
+    "typecheck": "echo react-native typecheck pending"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-native": ">=0.74"
+  }
+}

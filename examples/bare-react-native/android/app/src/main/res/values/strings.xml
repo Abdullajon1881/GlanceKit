@@ -1,0 +1,5 @@
+﻿<resources>
+    <string name="app_name">GlanceKitBareExample</string>
+    <string name="progress_card_widget_name">Progress Card Widget</string>
+    <string name="progress_card_widget_description">A GlanceKit progress widget powered by Jetpack Glance.</string>
+</resources>

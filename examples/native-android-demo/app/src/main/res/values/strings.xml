@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">GlanceKit Demo</string>
+    <string name="widget_name">Progress Card Widget</string>
+    <string name="widget_description">A Glance-based progress card widget demo.</string>
+    <string name="demo_title">ProgressCardWidget Demo</string>
+    <string name="deep_link_idle">Widget deep link: waiting for tap</string>
+    <string name="widget_id_hint">Widget ID</string>
+    <string name="title_hint">Title</string>
+    <string name="subtitle_hint">Subtitle</string>
+    <string name="progress_hint">Progress (0-100)</string>
+    <string name="update_button">Update Widget</string>
+    <string name="status_waiting">Enter data and update the widget.</string>
+</resources>
