@@ -9,7 +9,7 @@ It exists because Android widget development is still too native-heavy for React
 ## Install
 
 ```bash
-npm install @glancekit/react-native @glancekit/expo-plugin
+npm install @glancekit/react-native
 ```
 
 Add the plugin to `app.config.js`:
@@ -17,7 +17,7 @@ Add the plugin to `app.config.js`:
 ```js
 plugins: [
   [
-    '@glancekit/expo-plugin',
+    '@glancekit/react-native',
     {
       deepLinkScheme: 'myapp',
       deepLinkHost: 'progress',
@@ -76,13 +76,13 @@ AndroidWidgets.updateWidget(
 
 No Expo? Manual Android wiring is required. See the [bare React Native example](examples/bare-react-native) and the [@glancekit/react-native docs](packages/react-native/README.md) for the full setup.
 
-## Packages
+## Package
+
+One package, everything included:
 
 | Package | What it does |
 |---------|-------------|
-| [`@glancekit/react-native`](packages/react-native) | JS API and native bridge |
-| [`@glancekit/expo-plugin`](packages/expo-plugin) | Auto-wires AndroidManifest, widget XML, and resources |
-| [`@glancekit/android-core`](packages/android-core) | Pure Kotlin widget engine (no React Native dependency) |
+| [`@glancekit/react-native`](packages/react-native) | JS API, native bridge, Expo config plugin, and Kotlin widget engine |
 
 ## Examples
 

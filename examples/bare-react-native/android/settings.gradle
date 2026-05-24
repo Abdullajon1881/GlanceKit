@@ -2,14 +2,3 @@ rootProject.name = 'GlanceKitBareExample'
 apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
 include ':app'
 includeBuild('../node_modules/@react-native/gradle-plugin')
-include ':glancekit-android-core'
-
-def glanceKitAndroidCoreDir = new File(
-    ["node", "--print", "require.resolve('@glancekit/android-core')"]
-        .execute(null, rootDir)
-        .text
-        .trim()
-).getParentFile().getCanonicalFile()
-
-project(':glancekit-android-core').projectDir =
-    glanceKitAndroidCoreDir

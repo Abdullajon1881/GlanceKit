@@ -10,8 +10,6 @@
     "ios": "expo run:ios"
   },
   "dependencies": {
-    "@glancekit/android-core": "file:../../packages/android-core",
-    "@glancekit/expo-plugin": "file:../../packages/expo-plugin",
     "@glancekit/react-native": "file:../../packages/react-native",
     "babel-preset-expo": "~11.0.0",
     "expo": "~51.0.0",

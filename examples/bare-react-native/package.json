@@ -10,7 +10,6 @@
     "test": "jest"
   },
   "dependencies": {
-    "@glancekit/android-core": "file:../../packages/android-core",
     "@glancekit/react-native": "file:../../packages/react-native",
     "react": "18.2.0",
     "react-native": "0.74.5"

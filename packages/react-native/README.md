@@ -1,133 +1,107 @@
 # @glancekit/react-native
 
-React Native Android bridge for GlanceKit.
+Android home-screen widgets for React Native and Expo, powered by Jetpack Glance.
 
-## What You Get
+One package — JS API, native bridge, Expo config plugin, and Kotlin widget engine.
 
-This package exposes a small JavaScript API and ships the React Native Android bridge used by the bare React Native example and the Expo development-build example.
-
-The pure Android widget implementation now lives in `packages/android-core`.
-
-Current alpha scope:
-
-- one widget template: `ProgressCardWidget`
-- DataStore-backed widget state
-- Glance-based widget rendering
-- deep link support when the widget is tapped
-- native validation through `WidgetUpdateManager`
-
-## Installation
-
-Published package shape:
+## Install
 
 ```bash
 npm install @glancekit/react-native
 ```
 
-Monorepo example shape:
+### Expo Setup
 
-```json
-{
-  "dependencies": {
-    "@glancekit/react-native": "file:../../packages/react-native"
-  },
-  "overrides": {
-    "@glancekit/android-core": "file:../../packages/android-core"
-  }
-}
+Add the plugin to `app.config.js`:
+
+```js
+plugins: [
+  [
+    '@glancekit/react-native',
+    {
+      deepLinkScheme: 'myapp',
+      deepLinkHost: 'progress',
+    },
+  ],
+],
 ```
+
+Then rebuild:
+
+```bash
+npx expo prebuild --clean --platform android
+```
+
+### Bare React Native Setup
+
+Bare React Native apps need manual Android widget wiring:
+
+- Register `dev.glancekit.reactnative.android.widget.ProgressCardWidgetReceiver` in `AndroidManifest.xml`
+- Add `android.appwidget.action.APPWIDGET_UPDATE` intent filter and `android.appwidget.provider` metadata
+- Add `res/xml/progress_card_widget_info.xml`
+- Add `res/layout/glancekit_widget_loading_layout.xml`
+- Add `res/drawable/glancekit_progress_card_widget_preview.xml`
+- Add a deep-link intent filter if widget taps should reopen the app
+
+See [examples/bare-react-native](../../examples/bare-react-native) for a complete reference.
 
 ## API
 
 ```ts
-export type ProgressCardWidgetData = {
+import { AndroidWidgets } from '@glancekit/react-native';
+
+await AndroidWidgets.updateWidget('my-widget', {
+  title: 'Steps Today',
+  subtitle: '7,432 of 10,000',
+  progress: 74,
+  deepLink: 'myapp://progress/my-widget',
+});
+```
+
+### Types
+
+```ts
+type ProgressCardWidgetData = {
   title: string;
   subtitle: string;
-  progress: number;
+  progress: number;     // 0-100
   deepLink?: string;
 };
 
-export const AndroidWidgets = {
-  updateWidget(widgetId: string, data: ProgressCardWidgetData): Promise<void>;
-};
-```
-
-## Usage
-
-```ts
-import {AndroidWidgets} from '@glancekit/react-native';
-
-await AndroidWidgets.updateWidget('progress-demo', {
-  title: 'Worker is coming',
-  subtitle: 'Arriving in 12 min',
-  progress: 72,
-  deepLink: 'glancekit://progress/progress-demo',
-});
+AndroidWidgets.updateWidget(
+  widgetId: string,
+  data: ProgressCardWidgetData
+): Promise<void>;
 ```
 
 ## Error Handling
 
-Keep the JavaScript side thin and handle promise rejections directly:
-
 ```ts
 try {
-  await AndroidWidgets.updateWidget('progress-demo', {
-    title: 'Worker is coming',
-    subtitle: 'Arriving in 12 min',
-    progress: 72,
-  });
+  await AndroidWidgets.updateWidget('my-widget', { ... });
 } catch (error) {
   console.error('Widget update failed', error);
 }
 ```
 
-Current alpha error behavior:
-
-- invalid payloads reject from the native layer
-- progress outside `0..100` rejects cleanly
-- empty `title` or `subtitle` rejects cleanly
-- if the Android native module is not linked, the JS API rejects with a clear linking error
-
-## Android Wiring Notes
-
-Bare React Native apps still need manual Android widget wiring.
-
-Required pieces:
-
-- register `dev.glancekit.reactnative.android.widget.ProgressCardWidgetReceiver` in `AndroidManifest.xml`
-- add `android.appwidget.action.APPWIDGET_UPDATE` intent filter and `android.appwidget.provider` metadata
-- add `res/xml/progress_card_widget_info.xml`
-- add `res/layout/glancekit_widget_loading_layout.xml`
-- add `res/drawable/glancekit_progress_card_widget_preview.xml`
-- add a deep-link intent filter if widget taps should reopen the app by scheme
-- include `:glancekit-android-core` in `settings.gradle`
-
-Reference app:
-
-- [examples/bare-react-native](../../examples/bare-react-native)
-
-Expo apps should use `@glancekit/expo-plugin` instead of wiring these files by hand.
-
-Internally, the Android bridge module depends on the shared `android-core` Gradle project.
-For published installs, `@glancekit/react-native` depends on `@glancekit/android-core`.
-For local monorepo development, the example apps pin `@glancekit/android-core` with file-based npm overrides.
-
-## Troubleshooting
-
-Common alpha issues:
-
-- Metro cannot resolve `@glancekit/react-native` in a monorepo without a custom Metro config.
-- Windows `file:` dependencies are often installed as junctions, so Metro needs workspace-aware `watchFolders` and resolver paths.
-- Debug APKs and dev clients need Metro plus `adb reverse tcp:8081 tcp:8081` or they will fail to load JavaScript.
-- If the widget renders but does not update, inspect Android logs for `GlanceKitReceiver`, `GlanceKitWidget`, `GlanceKitState`, `GlanceKitUpdate`, and `GlanceKitModule`.
-
-See [TROUBLESHOOTING.md](../../TROUBLESHOOTING.md) for the full guide.
+Errors are clear and specific:
+- Invalid payloads reject from the native layer
+- Progress outside `0..100` rejects cleanly
+- Empty `title` or `subtitle` rejects cleanly
+- Missing native module rejects with a linking error
 
 ## Alpha Limitations
 
 - Android only
-- `ProgressCardWidget` only
-- no JSX or arbitrary component rendering
-- no background updates yet
-- progress is text-only for now
-- non-numeric IDs such as `progress-demo` update all active `ProgressCardWidget` instances in the current MVP
+- `ProgressCardWidget` template only
+- No JSX or arbitrary component rendering in widgets
+- No background updates yet
+- Non-numeric widget IDs update all active widget instances
+
+## Troubleshooting
+
+See [TROUBLESHOOTING.md](../../TROUBLESHOOTING.md) for common issues.
+
+## License
+
+[MIT](../../LICENSE)

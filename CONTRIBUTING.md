@@ -151,9 +151,7 @@ npx expo start --clear --dev-client
 Before submitting changes to any package, verify no unintended files leak into the tarball:
 
 ```bash
-cd packages/android-core && npm pack --dry-run
 cd packages/react-native && npm pack --dry-run
-cd packages/expo-plugin && npm pack --dry-run
 ```
 
 Confirm that test sources (`src/test/`, `android/src/test/`) do **not** appear.
@@ -256,16 +254,12 @@ If you want to work on any of these, open an issue to discuss the approach first
 
 ## 8. Publishing (Maintainers Only)
 
-The root `package.json` is `private: true` — it is not published. Only the individual packages are published to npm:
+The root `package.json` is `private: true` — it is not published. Only `@glancekit/react-native` is published:
 
 ```bash
-# From each package directory, not the root:
-cd packages/android-core && npm publish --access public
-cd packages/react-native && npm publish --access public
-cd packages/expo-plugin && npm publish --access public
+cd packages/react-native
+npm publish --access public --tag alpha
 ```
-
-Publish order matters: `android-core` first, then `react-native`, then `expo-plugin`.
 
 ## 9. Getting Help
 
