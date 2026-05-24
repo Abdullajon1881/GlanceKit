@@ -110,6 +110,18 @@ This is an alpha. Some things are intentionally out of scope:
 - CLI scaffolding for widget wiring
 - Per-instance widget targeting
 
+## Contributing
+
+```bash
+git clone https://github.com/Abdullajon1881/GlanceKit.git
+cd GlanceKit
+pnpm install
+```
+
+> **pnpm is required.** Do not use `npm install` or `yarn install` at the root.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide: building examples, running tests, branch conventions, and submitting pull requests.
+
 ## Links
 
 - [Troubleshooting](TROUBLESHOOTING.md)
