@@ -1,6 +1,6 @@
 ﻿# Bare React Native Example
 
-This example app wires the local `@glancekit/react-native` package into a bare React Native Android project.
+This example app wires the local `glancekit` package into a bare React Native Android project.
 
 ## What It Demonstrates
 

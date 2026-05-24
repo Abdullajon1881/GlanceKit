@@ -1,8 +1,8 @@
 {
-  "name": "@glancekit/react-native",
-  "version": "0.1.0-alpha.1",
+  "name": "glancekit",
+  "version": "0.1.0-alpha.0",
   "private": false,
-  "description": "Android home-screen widgets for React Native and Expo, powered by Jetpack Glance. One package: JS API, native bridge, and Expo config plugin.",
+  "description": "Android home-screen widgets for React Native and Expo, powered by Jetpack Glance.",
   "main": "src/index.js",
   "react-native": "src/index.js",
   "types": "src/index.d.ts",
@@ -33,10 +33,7 @@
     "config-plugin"
   ],
   "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
+    "scripts": {
     "build": "echo react-native package pending",
     "lint": "echo react-native lint pending",
     "typecheck": "echo react-native typecheck pending"

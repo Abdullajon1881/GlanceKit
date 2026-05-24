@@ -4,8 +4,8 @@ Managed Expo development-build example for GlanceKit.
 
 ## What This Example Proves
 
-- `@glancekit/react-native` works inside an Expo Android development build
-- `@glancekit/react-native plugin` generates the Android widget wiring during `expo prebuild`
+- `glancekit` works inside an Expo Android development build
+- `glancekit plugin` generates the Android widget wiring during `expo prebuild`
 - `AndroidWidgets.updateWidget(...)` updates the home-screen widget through the shared native module
 - DataStore-backed widget state renders correctly through Glance
 
@@ -27,7 +27,7 @@ If Metro still resolves stale workspace paths, run the clean install again after
 npx expo prebuild --clean --platform android
 ```
 
-This applies `@glancekit/react-native plugin` and writes the Android widget receiver, provider XML, preview drawable, loading layout, and string resources.
+This applies `glancekit plugin` and writes the Android widget receiver, provider XML, preview drawable, loading layout, and string resources.
 
 ## Build The Android App
 
@@ -82,7 +82,7 @@ This example consumes local workspace packages:
 ```json
 {
   "dependencies": {
-    "@glancekit/react-native": "file:../../packages/react-native"
+    "glancekit": "file:../../packages/react-native"
   }
 }
 ```

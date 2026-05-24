@@ -4,13 +4,13 @@
 
 -
 
-## Packages Affected
+## Area Affected
 
 <!-- Check all that apply -->
 
-- [ ] `@glancekit/android-core`
-- [ ] `@glancekit/react-native`
-- [ ] `@glancekit/expo-plugin`
+- [ ] JS API / TypeScript
+- [ ] Android native (Kotlin)
+- [ ] Expo config plugin
 - [ ] Examples only
 - [ ] Docs only
 
@@ -23,7 +23,7 @@
 ## Checklist
 
 - [ ] All three example apps still build
-- [ ] `npm pack --dry-run` looks correct for changed packages
+- [ ] `npm pack --dry-run` looks correct
 - [ ] No test sources, build artifacts, or secrets in the diff
 - [ ] Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/)
 

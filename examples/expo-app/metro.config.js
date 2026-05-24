@@ -17,7 +17,7 @@ config.resolver.nodeModulesPaths = [
   path.resolve(workspaceRoot, 'node_modules'),
 ];
 config.resolver.extraNodeModules = {
-  '@glancekit/react-native': glanceKitReactNativeRoot,
+  'glancekit': glanceKitReactNativeRoot,
 };
 
 module.exports = config;

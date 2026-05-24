@@ -26,7 +26,7 @@ module.exports = {
         },
       ],
       [
-        "@glancekit/react-native",
+        "glancekit",
         {
           deepLinkScheme: "glancekit",
           deepLinkHost: "progress",

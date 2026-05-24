@@ -23,7 +23,7 @@ const config = {
       path.resolve(workspaceRoot, 'node_modules'),
     ],
     extraNodeModules: {
-      '@glancekit/react-native': glanceKitReactNativeRoot,
+      'glancekit': glanceKitReactNativeRoot,
     },
   },
 };

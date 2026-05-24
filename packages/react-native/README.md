@@ -1,4 +1,4 @@
-# @glancekit/react-native
+# glancekit
 
 Android home-screen widgets for React Native and Expo, powered by Jetpack Glance.
 
@@ -7,7 +7,7 @@ One package — JS API, native bridge, Expo config plugin, and Kotlin widget eng
 ## Install
 
 ```bash
-npm install @glancekit/react-native
+npm install glancekit
 ```
 
 ### Expo Setup
@@ -17,7 +17,7 @@ Add the plugin to `app.config.js`:
 ```js
 plugins: [
   [
-    '@glancekit/react-native',
+    'glancekit',
     {
       deepLinkScheme: 'myapp',
       deepLinkHost: 'progress',
@@ -48,7 +48,7 @@ See [examples/bare-react-native](../../examples/bare-react-native) for a complet
 ## API
 
 ```ts
-import { AndroidWidgets } from '@glancekit/react-native';
+import { AndroidWidgets } from 'glancekit';
 
 await AndroidWidgets.updateWidget('my-widget', {
   title: 'Steps Today',

@@ -9,7 +9,7 @@ It exists because Android widget development is still too native-heavy for React
 ## Install
 
 ```bash
-npm install @glancekit/react-native
+npm install glancekit
 ```
 
 Add the plugin to `app.config.js`:
@@ -17,7 +17,7 @@ Add the plugin to `app.config.js`:
 ```js
 plugins: [
   [
-    '@glancekit/react-native',
+    'glancekit',
     {
       deepLinkScheme: 'myapp',
       deepLinkHost: 'progress',
@@ -35,7 +35,7 @@ npx expo prebuild --clean --platform android
 ## Use
 
 ```ts
-import { AndroidWidgets } from '@glancekit/react-native';
+import { AndroidWidgets } from 'glancekit';
 
 await AndroidWidgets.updateWidget('my-widget', {
   title: 'Steps Today',
@@ -74,7 +74,7 @@ AndroidWidgets.updateWidget(
 
 ## Bare React Native
 
-No Expo? Manual Android wiring is required. See the [bare React Native example](examples/bare-react-native) and the [@glancekit/react-native docs](packages/react-native/README.md) for the full setup.
+No Expo? Manual Android wiring is required. See the [bare React Native example](examples/bare-react-native) and the [glancekit docs](packages/react-native/README.md) for the full setup.
 
 ## Package
 
@@ -82,7 +82,7 @@ One package, everything included:
 
 | Package | What it does |
 |---------|-------------|
-| [`@glancekit/react-native`](packages/react-native) | JS API, native bridge, Expo config plugin, and Kotlin widget engine |
+| [`glancekit`](packages/react-native) | JS API, native bridge, Expo config plugin, and Kotlin widget engine |
 
 ## Examples
 

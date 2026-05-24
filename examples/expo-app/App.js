@@ -9,7 +9,7 @@ import {
   View,
   useColorScheme,
 } from "react-native";
-import { AndroidWidgets } from "@glancekit/react-native";
+import { AndroidWidgets } from "glancekit";
 
 const DEFAULT_WIDGET_ID = "progress-demo";
 const DEFAULT_DEEP_LINK = "glancekit://progress/progress-demo";

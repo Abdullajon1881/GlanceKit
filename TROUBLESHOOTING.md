@@ -93,11 +93,11 @@ npx expo start --clear --dev-client --port 8082
 
 If you change the port, update `adb reverse` to match it.
 
-## Metro Cannot Resolve @glancekit/react-native
+## Metro Cannot Resolve glancekit
 
 Symptoms:
 
-- `Unable to resolve module @glancekit/react-native`
+- `Unable to resolve module glancekit`
 - app works after copying files manually but fails with `file:` workspace dependencies
 
 Cause:
@@ -107,7 +107,7 @@ Cause:
 
 Fix:
 
-1. Ensure the app depends on `"@glancekit/react-native": "file:../../packages/react-native"`.
+1. Ensure the app depends on `"glancekit": "file:../../packages/react-native"`.
 2. Add a monorepo-aware `metro.config.js`.
 3. Clean install dependencies.
 

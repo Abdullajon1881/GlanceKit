@@ -12,9 +12,7 @@
 - [ ] Verify widget updates from the Expo development build
 - [ ] Verify deep-link tap opens the app
 - [ ] Verify invalid progress such as `101` shows a readable error and does not crash the widget
-- [x] Confirm `@glancekit/android-core` package contents with `npm pack --dry-run` (no test sources)
-- [x] Confirm `@glancekit/react-native` package contents with `npm pack --dry-run` (no test sources)
-- [x] Confirm `@glancekit/expo-plugin` package contents with `npm pack --dry-run`
+- [x] Confirm `glancekit` package contents with `npm pack --dry-run` (no test sources, includes plugin/)
 - [ ] Review package versions
 - [x] Update `CHANGELOG.md`
 - [x] Prepare GitHub release notes

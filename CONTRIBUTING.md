@@ -65,18 +65,17 @@ GlanceKit/
 └── README.md
 ```
 
-### Package dependency graph
+### Package
+
+Everything ships in one package: `glancekit`
 
 ```
-@glancekit/expo-plugin
-    └── peers: expo >=51
-
-@glancekit/react-native
-    ├── depends on: @glancekit/android-core
-    └── peers: react >=18, react-native >=0.74
-
-@glancekit/android-core
-    └── standalone (no JS runtime dependency)
+glancekit
+    ├── JS API + TypeScript types
+    ├── React Native native bridge (Kotlin)
+    ├── Kotlin widget engine (Jetpack Glance + DataStore)
+    ├── Expo config plugin (built-in)
+    └── peers: react >=18, react-native >=0.74, expo >=51 (optional)
 ```
 
 ## 4. Build and Test
@@ -254,7 +253,7 @@ If you want to work on any of these, open an issue to discuss the approach first
 
 ## 8. Publishing (Maintainers Only)
 
-The root `package.json` is `private: true` — it is not published. Only `@glancekit/react-native` is published:
+The root `package.json` is `private: true` — it is not published. Only `glancekit` is published:
 
 ```bash
 cd packages/react-native
